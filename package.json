@@ -5,12 +5,15 @@
   "private": true,
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
-    "serve": "http-server -c 1 -a localhost",
+    "serve": "http-server -c 1 -a 0.0.0.0",
     "dev": "npm-run-all --parallel watchify serve",
     "build": "cross-env NODE_ENV=production browserify src/main.js | uglifyjs -c warnings=false -m > dist/build.js"
   },
   "dependencies": {
-    "vue": "^1.0.0"
+    "firebase": "^5.5.6",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuefire": "^1.4.5"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -20,13 +23,13 @@
     "babel-runtime": "^6.0.0",
     "cross-env": "^1.0.6",
     "babelify": "^7.2.0",
-    "browserify": "^12.0.1",
+    "browserify": "^16.2.3",
     "browserify-hmr": "^0.3.1",
     "http-server": "^0.9.0",
     "npm-run-all": "^1.6.0",
     "uglify-js": "^2.5.0",
-    "vueify": "^8.5.2",
-    "watchify": "^3.4.0"
+    "vueify": "^9.4.1",
+    "watchify": "^3.11.0"
   },
   "browserify": {
     "transform": [
